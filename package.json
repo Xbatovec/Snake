@@ -2,7 +2,7 @@
   "name": "snake",
   "productName": "snake",
   "version": "1.0.0",
-  "description": "My Electron application description",
+  "description": "Just snaaaaake",
   "main": "src/main.js",
   "scripts": {
     "start": "electron-forge start",
@@ -13,8 +13,8 @@
   },
   "keywords": [],
   "author": {
-    "name": "Xbat",
-    "email": "99105387+Xbatovec@users.noreply.github.com"
+    "name": "Xbatovec",
+    "email": "post@xbatovec.com"
   },
   "license": "MIT",
   "dependencies": {
