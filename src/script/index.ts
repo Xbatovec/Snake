@@ -1,30 +1,22 @@
+interface Position {
+    x: number;
+    y: number;
+}
+
 class Player {
-    private length: number;
-    private pos: object;
     private speed: number;
     private direction: string;
+    private activePoints: Position[] = [];
+    public isDead: boolean = true;
 
-    public constructor(length: number, pos: object, speed: number, direction: string) {
-        this.length = length;
-        this.pos = pos;
+    public constructor(pos: Position, speed: number, direction: string) {
         this.speed = speed;
         this.direction = direction;
+        this.activePoints = [{x: pos.x, y: pos.y-3}, {x: pos.x, y: pos.y-2}, {x: pos.x, y: pos.y-1}, {x: pos.x, y: pos.y}];
     }
 
-    public getLength(): number {
-        return this.length;
-    }
-
-    public setLength(length: number): void {
-        this.length = length;
-    }
-
-    public getPos(): object {
-        return this.pos;
-    }
-
-    public setPos(pos: object): void {
-        this.pos = pos;
+    public getPos(): Position {
+        return this.activePoints[this.activePoints.length-1];
     }
 
     public getSpeed(): number {
@@ -42,16 +34,61 @@ class Player {
     public setDirection(direction: string): void {
         this.direction = direction;
     }
+
+    public getLength(): number {
+        return this.activePoints.length;
+    }
+
+    public getActivePoints(): Position[] {
+        return {...this.activePoints};
+    }
+
+    public pushActivePoint(activePoint: Position): void {
+        this.activePoints.push(activePoint);
+    }
+
+    public shiftActivePoint(): void {
+        this.activePoints.shift();
+    }
+
+    public move(): void {
+        const moveObject: Position = {x: 0, y: 0};
+        const snakeHead: Position = this.activePoints[this.activePoints.length-1];
+
+        switch (this.direction) {
+            case 'up': moveObject.y = -1; break;
+            case 'down': moveObject.y = 1; break;
+            case 'left': moveObject.x = -1; break;
+            case 'right': moveObject.x = 1; break;
+        }
+
+        const finalX = snakeHead.x + moveObject.x;
+        const finalY = snakeHead.y + moveObject.y;
+
+        this.activePoints.push({
+            x: finalX,
+            y: finalY
+        });
+
+        checkDeath({x: finalX, y: finalY});
+    }
 }
 
-const player = new Player(1, {x: 6, y: 6}, 1, 'down');
+const player = new Player({x: 8, y: 8}, 1, 'right');
+let loopTimeout: NodeJS.Timeout;
 
-function loop() {
+function loop(keyDown: boolean = false) {
 
-    let length = player.getLength();
-    let pos = player.getPos();
-    let speed = player.getSpeed();
-    const direction = player.getDirection();
+    if (keyDown) clearTimeout(loopTimeout);
 
-    setTimeout(() => loop(), 1000);
+    player.move();
+
+    if (player.isDead) {
+        console.log('You died');
+        return;
+    }
+
+    render();
+    
+    loopTimeout = setTimeout(() => loop(), 400);
 }

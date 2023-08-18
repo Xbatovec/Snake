@@ -3,7 +3,7 @@
   "productName": "snake",
   "version": "1.0.0",
   "description": "Just snaaaaake",
-  "main": "src/main.js",
+  "main": "server/main.js",
   "scripts": {
     "start": "electron-forge start",
     "package": "electron-forge package",
