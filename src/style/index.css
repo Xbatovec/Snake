@@ -17,9 +17,9 @@ body {
   background-color: #000;
 }
 
-.play-ground {
+#play-ground {
   display: grid;
-  grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
+  grid-template-columns: repeat(15, 1fr);
   gap: 0;
   width: 770px;
   height: 770px;
@@ -30,7 +30,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: #5a5a5a solid 1px;
 }
 
 .item {
@@ -39,23 +38,11 @@ body {
   visibility: hidden;
 }
 
-.snake-item {
-  visibility: visible;
-  border-radius: 7px;
-  background-color: #b4ffa4;
-}
-
-.snake-head-item {
-  visibility: visible;
-  border-radius: 7px;
-  background-color: #71cf5b;
-}
-
 .good-food-item {
   width: 45%;
   height: 45%;
   visibility: visible;
-  border-radius: 10px;
+  border-radius: 17%;
   transform: rotate(45deg);
   background-color: #fcfa81;
 }
@@ -64,7 +51,7 @@ body {
   width: 45%;
   height: 45%;
   visibility: visible;
-  border-radius: 10px;
+  border-radius: 17%;
   transform: rotate(45deg);
   background-color: #ff6f6f;
 }
@@ -73,7 +60,22 @@ body {
   width: 45%;
   height: 45%;
   visibility: visible;
-  border-radius: 10px;
+  border-radius: 17%;
   transform: rotate(45deg);
   background-color: #2c2c2c;
+}
+
+.snake-item {
+  visibility: visible;
+  border-radius: 15%;
+  background-color: #b4ffa4;
+}
+
+.snake-head-item {
+  width: 80%;
+  height: 80%;
+  visibility: visible;
+  border-radius: 15%;
+  transform: rotate(0deg);
+  background-color: #71cf5b;
 }

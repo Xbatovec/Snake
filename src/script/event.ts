@@ -35,3 +35,20 @@ window.addEventListener('keydown', event => {
             return;
     }
 });
+
+window.addEventListener('resize', _ => {
+    responsivity();
+});
+
+function responsivity() {
+    
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+    const playGroundStyle = document.getElementById('play-ground').style;
+
+    const value = (width < height) ? width * 0.9 : height * 0.9;
+
+    playGroundStyle.width = `${value}px`;
+    playGroundStyle.height = `${value}px`;
+}
+responsivity();
