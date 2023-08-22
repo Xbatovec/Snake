@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Moirai+One&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  text-decoration: none;
+  list-style-type: none;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+body {
+  overflow: hidden;
+  background-color: #000;
+}
+
+/* menu */
+#menu-box {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000000eb;
+  z-index: 1;
+}
+
+#menu {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 18vh;
+}
+
+#title {
+  font-size: 6em;
+  font-family: 'Moirai One';
+  color: #fff;
+}
+
+#menu-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 20%;
+}
+
+.menu-button {
+  width: fit-content;
+  font-size: 3em;
+  text-align: center;
+  font-family: 'Moirai One';
+  color: #fff;
+  cursor: pointer;
+}
+
+.menu-button:hover {
+  font-weight: 700;
+}
+
+#exit-button {
+  margin-top: 1.5vh
+}
+
+/* start counter */
+#start-counter-box {
+  position: fixed;
+  display: none;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: #00000083;
+  z-index: 2;
+}
+
+#start-counter {
+  margin-top: 18vh;
+  font-size: 12em;
+  font-family: 'Moirai One';
+  color: #fff;
+}
+
+/* playground */
+#play-ground-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+}
+
+#play-ground {
+  display: grid;
+  grid-template-columns: repeat(15, 1fr);
+  gap: 0;
+  border: #ffffff solid 1px;
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item {
+  width: 80%;
+  height: 80%;
+  visibility: hidden;
+}
+
+.good-food-item {
+  width: 45%;
+  height: 45%;
+  visibility: visible;
+  border-radius: 17%;
+  transform: rotate(45deg);
+  background-color: #fcfa81;
+}
+
+.neutral-food-item {
+  width: 45%;
+  height: 45%;
+  visibility: visible;
+  border-radius: 17%;
+  transform: rotate(45deg);
+  background-color: #ff6f6f;
+}
+
+.bad-food-item {
+  width: 45%;
+  height: 45%;
+  visibility: visible;
+  border-radius: 17%;
+  transform: rotate(45deg);
+  background-color: #2c2c2c;
+}
+
+.snake-item {
+  visibility: visible;
+  border-radius: 15%;
+  background-color: #b4ffa4;
+}
+
+.snake-head-item {
+  width: 80%;
+  height: 80%;
+  visibility: visible;
+  border-radius: 15%;
+  transform: rotate(0deg);
+  background-color: #71cf5b;
+}
+
+#playground-stats-box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+#playground-stats-top {
+  position: relative;
+  perspective: 3600px;
+}
+
+#playground-stats-top > div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: -26%;
+  border: #ffffff solid 2px;
+  transform-style: preserve-3d;
+  transform: rotateX(60deg);
+}
+
+#playground-stats {
+  position: relative;
+  perspective: 3500px;
+}
+
+#playground-stats > div {
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 100%;
+  top: -18%;
+  border: #ffffff solid 1px;
+  transform-style: preserve-3d;
+  transform: rotateX(30deg);
+}
+
+#playground-stats > div > div {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 25%;
+  height: 100%;
+}
+
+#playground-stats > div > div h2 {
+  font-size: 3.5vmin;
+  font-weight: 200;
+  color: #fff;
+  font-family: 'Audiowide';
+}
+
+#playground-stats > div > div h3 {
+  font-size: 6.5vmin;
+  font-weight: 200;
+  color: #fff;
+  font-family: 'Audiowide';
+}
+
+#playground-stats > div :nth-child(2) :nth-child(2) {
+  font-size: 8vmin;
+}
+
+#playground-stats > div > div h3 span {
+  font-size: 3.5vmin;
+  font-weight: 200;
+  color: #fff;
+  font-family: 'Audiowide';
+}
+
+#playground-stats-side {
+  position: absolute;
+  top: 79%;
+  border: #ffffff solid 1px;
+}
+
+#playground-stats-side > div {
+  width: 100%;
+  height: 100%;
+}

@@ -1,6 +1,10 @@
 {
     "compilerOptions": {
-        "resolveJsonModule": true,
-        "esModuleInterop": true
-    }
+        "target": "ES6",              // Set the ECMAScript target version
+        "module": "ES6",               // Set the module system
+        "outDir": "./src/js",           // Output directory for compiled files
+        "esModuleInterop": true           // Simplify interoperability with ES6 modules
+      },
+      "include": ["src/ts/**/*.ts"],         // Specify which files to include for compilation
+      "exclude": ["node_modules"]             // Specify files/folders to exclude from compilation
 }

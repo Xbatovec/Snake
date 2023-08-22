@@ -12,7 +12,7 @@ const createWindow = () => {
     width: 800,
     height: 800,
     webPreferences: {
-      preload: path.join('src', 'preload.ts'),
+      preload: path.join('src', 'preload.js'),
     },
   });
 
@@ -20,7 +20,7 @@ const createWindow = () => {
   mainWindow.loadFile(path.join('src', 'index.html'));
 
   // remove tool menu
-  mainWindow.removeMenu();
+  //mainWindow.removeMenu();
 };
 
 // This method will be called when Electron has finished
