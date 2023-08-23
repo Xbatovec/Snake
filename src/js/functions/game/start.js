@@ -22,6 +22,7 @@ export default function start() {
         playGround.generateFood();
         player.clearStomach();
         player.isDead = false;
+        playGround.timer();
         game.loop();
     });
 }

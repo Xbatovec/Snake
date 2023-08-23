@@ -11,6 +11,7 @@ export default function loop(keyDown: boolean = false) {
 
     if (player.isDead) {
         console.log('You died');
+        playGround.clearTimer();
         menu.death();
         return;
     }
@@ -22,6 +23,8 @@ export default function loop(keyDown: boolean = false) {
     playGround.generateFood();
 
     player.clearStomach();
+
+    playGround.statistics();
     
     loopTimeout = setTimeout(() => loop(), speedFormula());
 }

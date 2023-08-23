@@ -1,5 +1,5 @@
 import { elId } from "../functions/utilities.js";
-import { game } from "../init.js";
+import { game, playGround } from "../init.js";
 
 export default class Menu {
 
@@ -14,6 +14,8 @@ export default class Menu {
     public main() {
 
         game.clearAll();
+
+        playGround.clearAllStats();
         
         elId('death-menu-box').style.display = 'none';
         elId('menu-box').style.display = 'flex';

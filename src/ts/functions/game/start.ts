@@ -17,6 +17,9 @@ export default async function start() {
     player.clearStomach();
 
     player.isDead = false;
+
+    playGround.timer();
+    
     game.loop();
 }
 

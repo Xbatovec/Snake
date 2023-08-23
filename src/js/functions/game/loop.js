@@ -7,6 +7,7 @@ export default function loop(keyDown = false) {
     player.move();
     if (player.isDead) {
         console.log('You died');
+        playGround.clearTimer();
         menu.death();
         return;
     }
@@ -15,5 +16,6 @@ export default function loop(keyDown = false) {
     playGround.clearFood();
     playGround.generateFood();
     player.clearStomach();
+    playGround.statistics();
     loopTimeout = setTimeout(() => loop(), speedFormula());
 }

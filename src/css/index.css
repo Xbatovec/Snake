@@ -218,14 +218,14 @@ body {
 }
 
 #playground-stats > div > div h3 {
-  font-size: 6.5vmin;
+  font-size: 5vmin;
   font-weight: 200;
   color: #fff;
   font-family: 'Audiowide';
 }
 
 #playground-stats > div :nth-child(2) :nth-child(2) {
-  font-size: 8vmin;
+  font-size: 5.7vmin;
 }
 
 #playground-stats > div > div h3 span {

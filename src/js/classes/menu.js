@@ -1,5 +1,5 @@
 import { elId } from "../functions/utilities.js";
-import { game } from "../init.js";
+import { game, playGround } from "../init.js";
 export default class Menu {
     startGameListener() {
         elId('start-button').addEventListener('click', () => game.start());
@@ -9,6 +9,7 @@ export default class Menu {
     }
     main() {
         game.clearAll();
+        playGround.clearAllStats();
         elId('death-menu-box').style.display = 'none';
         elId('menu-box').style.display = 'flex';
     }
