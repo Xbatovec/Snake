@@ -25,6 +25,7 @@ export default class Player {
     setDirection(direction) { this.direction = direction; }
     getLength() { return this.activePoints.length; }
     getActivePoints() { return this.activePoints; }
+    setActivePoints(activePoint) { this.activePoints = activePoint; }
     pushActivePoint(activePoint) { this.activePoints.push(activePoint); }
     shiftActivePoint() { this.activePoints.shift(); }
     clearStomach() { this.stomach = { good: false, neutral: false, bad: false }; }

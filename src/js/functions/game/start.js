@@ -18,6 +18,7 @@ export default function start() {
         getClassList(snakeHead).add('snake-head-item');
         for (let i = 0; i < player.getLength() - 1; i++)
             getClassList(posToIndex(activePoints[i])).add('snake-item');
+        player.stomach = { good: true, neutral: true, bad: true };
         playGround.generateFood();
         player.clearStomach();
         player.isDead = false;

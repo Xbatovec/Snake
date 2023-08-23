@@ -1,4 +1,4 @@
-import { player, playGround } from "../../init.js";
+import { menu, player, playGround } from "../../init.js";
 import { speedFormula } from "../utilities.js";
 
 let loopTimeout: NodeJS.Timeout;
@@ -11,6 +11,7 @@ export default function loop(keyDown: boolean = false) {
 
     if (player.isDead) {
         console.log('You died');
+        menu.death();
         return;
     }
 

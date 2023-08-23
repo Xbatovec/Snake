@@ -8,19 +8,25 @@
   </head>
   <body>
     <div id="menu-box">
-      <div id="menu">
-        <h1 id="title">Snaaaake</h1>
-        <div id="menu-buttons">
+      <div class="menu">
+        <h1 class="title">Snaaaake</h1>
+        <div class="menu-buttons">
           <div id="start-button" class="menu-button">Start game</div>
-          <div id="exit-button" class="menu-button" onclick="window.close()">Exit game</div>
+          <div class="menu-button exit-button" onclick="window.close()">Exit game</div>
         </div>
       </div>
     </div>
     <div id="start-counter-box">
-      <h2 id="start-counter">3</h2>
+      <h2 id="start-counter"></h2>
     </div>
-    <div id="death-screen">
-
+    <div id="death-menu-box">
+      <div class="menu">
+        <h1 class="title">You died</h1>
+        <div class="menu-buttons">
+          <div id="back-button" class="menu-button">Back to menu</div>
+          <div class="menu-button exit-button" onclick="window.close()">Rage quit</div>
+        </div>
+      </div>
     </div>
     <div id="play-ground-box">
       <div id="play-ground">

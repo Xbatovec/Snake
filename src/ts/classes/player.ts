@@ -31,6 +31,7 @@ export default class Player {
     public getLength(): number {return this.activePoints.length;}
 
     public getActivePoints(): Position[] {return this.activePoints;}
+    public setActivePoints(activePoint: Position[]): void {this.activePoints = activePoint}
     public pushActivePoint(activePoint: Position): void {this.activePoints.push(activePoint);}
     public shiftActivePoint(): void {this.activePoints.shift();}
 
