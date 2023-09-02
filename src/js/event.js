@@ -1,6 +1,23 @@
 import { game, player } from "./init.js";
 export function keyDown() {
     window.addEventListener('keydown', event => {
+        // fullscreen
+        if (event.code === 'F11') {
+            if (document.fullscreenElement) {
+                // Document is currently in fullscreen, so exit fullscreen
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                }
+            }
+            else {
+                // Document is not in fullscreen, so enter fullscreen
+                const element = document.documentElement; // <html> element
+                if (element.requestFullscreen) {
+                    element.requestFullscreen();
+                }
+            }
+        }
+        // movement
         if (player.isDead)
             return;
         const direction = player.getDirection();

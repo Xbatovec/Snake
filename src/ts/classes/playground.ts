@@ -27,6 +27,6 @@ export default class Playground {
 
         elId('length-stats').innerHTML = '4';
         elId('time-stats').innerHTML = '00:00:00';
-        elId('speed-stats').innerHTML = '3.3<span>t/s</span>';
+        elId('speed-stats').innerHTML = '3.4<span>t/s</span>';
     }
 }

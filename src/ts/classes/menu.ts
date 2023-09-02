@@ -1,10 +1,15 @@
 import { elId } from "../functions/utilities.js";
-import { game, playGround } from "../init.js";
+import { game, playGround, sound } from "../init.js";
 
 export default class Menu {
 
     public startGameListener() {
-        elId('start-button').addEventListener('click', () => game.start());
+        elId('start-button').addEventListener('click', () => {
+            game.start();
+
+            // play sound
+            sound.click.play();
+        });
     }
 
     public backToMenuListener() {
@@ -19,6 +24,9 @@ export default class Menu {
         
         elId('death-menu-box').style.display = 'none';
         elId('menu-box').style.display = 'flex';
+
+        // play sound
+        sound.click.play();
     }
 
     public death() {

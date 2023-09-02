@@ -1,4 +1,4 @@
-import { menu, game, player, playGround } from "./init.js";
+import { menu, game, player, playGround, sound } from "./init.js";
 import { keyDown, resize, responsivity } from "./event.js";
 
 window.addEventListener('load', _ => {
@@ -9,3 +9,6 @@ window.addEventListener('load', _ => {
 
 menu.startGameListener();
 menu.backToMenuListener();
+
+sound.loopSounds();
+sound.music.play();

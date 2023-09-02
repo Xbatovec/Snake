@@ -1,6 +1,6 @@
 import { player } from "../../init.js";
 import { posToIndex, getClassList, rng } from "../utilities.js";
-export default function clearFood(playGround) {
+export default function generateFood(playGround) {
     // return if player didn't eat
     if (!(player.stomach.good || player.stomach.neutral || player.stomach.bad))
         return;

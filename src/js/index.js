@@ -1,4 +1,4 @@
-import { menu } from "./init.js";
+import { menu, sound } from "./init.js";
 import { keyDown, resize, responsivity } from "./event.js";
 window.addEventListener('load', _ => {
     keyDown();
@@ -7,3 +7,5 @@ window.addEventListener('load', _ => {
 });
 menu.startGameListener();
 menu.backToMenuListener();
+sound.loopSounds();
+sound.music.play();
